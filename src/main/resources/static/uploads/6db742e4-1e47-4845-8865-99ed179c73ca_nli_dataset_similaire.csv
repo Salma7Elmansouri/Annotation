@@ -1,0 +1,21 @@
+id,text1,text2,label
+101,Les oiseaux chantent le matin.,"Le matin, les oiseaux font du bruit.",entailment
+102,Il a oublié son parapluie chez lui.,Il n'a pas pris son parapluie.,entailment
+103,Elle est partie en vacances en août.,Elle a voyagé pendant l'été.,entailment
+104,La voiture est tombée en panne.,Elle a dû appeler un dépanneur.,neutral
+105,Le chat dort sur le canapé.,Le chat est réveillé.,contradiction
+106,Il aime beaucoup le chocolat.,Il déteste les sucreries.,contradiction
+107,Ils ont visité Paris le mois dernier.,Ils étaient en France récemment.,entailment
+108,Le film a commencé à 20h.,Ils ont regardé la bande-annonce avant 20h.,neutral
+109,Il fait très froid aujourd'hui.,La météo annonce des températures glaciales.,entailment
+110,Elle cuisine tous les dimanches.,Elle mange au restaurant le dimanche.,contradiction
+111,La conférence aura lieu demain.,L'événement est prévu pour demain.,entailment
+112,Les enfants jouent dans le jardin.,Les enfants sont à l'école.,contradiction
+113,Il a acheté un nouveau vélo.,Il avait besoin d’un moyen de transport.,neutral
+114,Le train est en retard de 30 minutes.,Le train arrivera à l’heure.,contradiction
+115,Elle a reçu une promotion.,Elle a changé de poste dans son entreprise.,neutral
+116,Ils regardent un match de football.,Ils assistent à une compétition sportive.,entailment
+117,Il porte un manteau.,Il fait froid dehors.,neutral
+118,Elle travaille dans une boulangerie.,Elle vend du pain.,entailment
+119,Le ciel est couvert.,Il fait soleil.,contradiction
+120,Ils habitent en ville.,Ils vivent en zone rurale.,contradiction

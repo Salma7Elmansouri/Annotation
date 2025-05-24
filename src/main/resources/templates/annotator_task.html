@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task annotator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-gradient shadow-sm" style="background:blue;">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">Annotator Space</a>
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/annotator/annotator_dashboard}">
+                    <i class="bi bi-arrow-left-circle me-1"></i>My Tasks
+                </a>
+            </li>
+        </ul>
+        <div class="d-flex">
+            <a href="/logout" class="btn btn-outline-warning">
+                <i class="bi bi-box-arrow-right me-1"></i>Log out
+            </a>
+        </div>
+    </div>
+</nav>
+<br>
+
+<div class="container" style="max-width: 800px;">
+    <!-- Indicateur de progression -->
+    <div class="mb-3">
+        <span class="badge bg-info fs-6" th:text="'Tâche ' + ${taskIndex + 1} + ' sur ' + ${taskTotal}">Task 1 on X</span>
+    </div>
+
+    <!-- Infos -->
+    <h2 class="mb-2" th:text="'ID du couple : ' + ${task.textPair.id}"></h2>
+    <p class="text-muted" th:text="${task.dataset.description}">Description</p>
+
+    <!-- Contenu du couple -->
+    <div class="card p-4 shadow-sm mb-4">
+        <h5 class="mb-2 text-primary">Text 1</h5>
+        <p class="border p-2 rounded bg-dark" th:text="${task.textPair.text1}"></p>
+
+        <h5 class="mt-4 mb-2 text-primary">Text 2</h5>
+        <p class="border p-2 rounded bg-dark" th:text="${task.textPair.text2}"></p>
+    </div>
+
+    <!-- Formulaire -->
+    <form th:action="@{/annotator/task/submit}" method="post">
+        <input type="hidden" name="taskId" th:value="${task.id}" />
+
+        <!-- Choix de classe -->
+        <div class="mb-4">
+            <label class="form-label fw-semibold">Choose a Class :</label>
+            <div class="form-check" th:each="cls : ${classes}">
+                <input class="form-check-input" type="radio" name="selectedClass"
+                       th:id="${cls}" th:value="${cls}" th:checked="${task.annotation == cls}" required>
+                <label class="form-check-label" th:for="${cls}" th:text="${cls}"></label>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="d-flex justify-content-between">
+            <!-- Précédent -->
+            <a class="btn btn-outline-secondary"
+               th:if="${previousTaskId != null}"
+               th:href="@{'/annotator/task?taskId=' + ${previousTaskId}}">
+                &laquo; Previous
+            </a>
+
+            <!-- Suivant -->
+            <div th:if="${nextTaskId != null}">
+                <button type="submit" class="btn btn-primary">
+                    Validate & Next &raquo;
+                </button>
+            </div>
+
+            <!-- Dernière tâche -->
+            <div th:if="${nextTaskId == null}">
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-check-circle me-1"></i>Validate
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+<!-- JS Bootstrap -->
+<script>document.documentElement.setAttribute("data-bs-theme", "dark");
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

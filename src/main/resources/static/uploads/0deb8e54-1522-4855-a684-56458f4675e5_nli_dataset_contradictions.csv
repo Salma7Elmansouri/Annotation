@@ -1,0 +1,11 @@
+premise,hypothesis,label
+Les chats dorment toute la journée.,Les chats sont actifs toute la journée.,contradiction
+Le soleil se lève à l'est.,Le soleil se lève à l'ouest.,contradiction
+Un médecin soigne les malades.,Un médecin cause des maladies.,contradiction
+Le football est un sport populaire.,Le football est rarement pratiqué.,contradiction
+Les avions volent dans le ciel.,Les avions roulent sur les routes.,contradiction
+Les ordinateurs ont changé le monde.,Les ordinateurs sont inutiles.,contradiction
+Les plantes ont besoin de lumière.,Les plantes peuvent vivre dans le noir.,contradiction
+L'eau bout à 100 degrés Celsius.,L'eau gèle à 100 degrés Celsius.,contradiction
+Les oiseaux chantent au printemps.,Les oiseaux restent silencieux au printemps.,contradiction
+Les enfants vont à l'école le matin.,Les enfants dorment toute la journée.,contradiction
